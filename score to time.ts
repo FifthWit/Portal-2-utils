@@ -1,5 +1,9 @@
     function calcScore(score: number): string {
-        const ms = (score % 100) * 10;
+        let ms = score % 100;
+        if (ms < 10) {
+            ms = `0${ms}`;
+        }
+
         const seconds = Math.floor((score / 100) % 60);
         const minutes = Math.floor(score / 100 / 60);
         if (minutes === 0) {
